@@ -49,7 +49,9 @@ export default function Home() {
 				{/* <p></p> */}
 
 				<section>
-					<h3 className="text-center font-medium text-3xl mb-12">Interested in Participating?</h3>
+					<h3 className="text-center font-medium text-3xl mb-12">
+						Interested in Participating?
+					</h3>
 					<div className="grid md:grid-cols-3 gap-4">
 						{participationOptions.map(option => (
 							<Card key={option.name}>

@@ -7,20 +7,27 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
+import Link from 'next/link';
 
 const participationOptions = [
 	{
 		name: 'Companies',
 		description:
 			"If you are a company that uses AI in your software engineering process, please come participate in our research. Participation will grant you exclusive access to our findings. See how your company stacks up against the competition. Are you leveraging AI to its fullest potential? And if not, what are other companies doing that can improve your engineer's workflow?",
-		link: '/companies',
+		link: 'https://byu.az1.qualtrics.com/jfe/form/SV_bKlSm8oj0a9xRnU?Q_PopulateResponse={"QID41":"Test%20Company"}',
 	},
 	{
-		name: 'Individuals',
+		name: 'Professional Individual',
 		description:
-			'If you are an individual software engineer who uses AI in your software engineering process, we would love to hear from you. Your feedback will help us understand how AI is being used in the industry and how it can be improved.',
-		link: '/individuals',
+			'If you are an individual career software engineer who uses AI in your software engineering process, we would love to hear from you. Your feedback will help us understand how AI is being used in the industry and how it can be improved.',
+		link: 'https://byu.az1.qualtrics.com/jfe/form/SV_bKlSm8oj0a9xRnU',
 	},
+	{
+		name: 'Amateur / Hobbyist Individual',
+		description:
+			'If you are an amateur or hobbyist software engineer who uses AI in your software engineering process, we want to hear from you too. Your feedback will help us understand how AI is being used in the industry and how it can be improved.',
+		link: 'https://byu.az1.qualtrics.com/jfe/form/SV_bKlSm8oj0a9xRnU?amateur=true',
+	}
 ];
 
 export default function Home() {
@@ -62,7 +69,9 @@ export default function Home() {
 									<CardDescription>{option.description}</CardDescription>
 								</CardContent>
 								<CardFooter>
-									<Button>Go</Button>
+									<Button>
+										<Link href={option.link} target="_blank">Go</Link>
+									</Button>
 								</CardFooter>
 							</Card>
 						))}
